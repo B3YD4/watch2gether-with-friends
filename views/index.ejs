@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Arkadaşların İle Film İzle!</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="index.css">
+	<script src="/socket.io/socket.io.js"></script>
+	
+</head>
+<body>
+
+	<h1 id="ortayazi"><center>Videoyu Başlatmadan Önce Kontrol Fonksiyonunu Kullanınız!</center></h1>
+	
+	<!-- Video Divini Oluşturduk -->
+	<div id="videocanvas">
+
+		<video width="800" height="600" id="frame">
+			<source src="deneme.mp4" type="video/mp4">
+		</video>
+
+		<div id="buttons">
+			<center>
+			<button onclick="kontrol()" type="button" id="kontrol">Kontrol</button>
+			<button onclick="baslat()" type="button" id="baslat" style="display:none;">Başlat</button>
+			<button onclick="durdur()" type="button" id="durdur" style="display:none;">Durdur</button>
+			<button onclick="gal()" type="button" id="gal" style="display:none;"><< 5 Saniye Geri Al</button>
+			<button onclick="ial()" type="button" id="ial" style="display:none;">5 Saniye İleri Al >></button>
+			<button onclick="bal()" type="button" id="bal" style="display:none;">Başa Al</button>
+			<button onclick="tamekran()" type="button" id="te" style="display:none;"> Tam Ekran</button>
+			</center>
+
+		</div>
+
+	</div>
+
+	<!-- Script Dosyasını Ekledik -->
+	<script type="text/javascript" src="watch.js"></script>
+	
+
+</body>
+</html>
