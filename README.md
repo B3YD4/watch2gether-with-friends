@@ -1,4 +1,4 @@
-##Nasıl Kullanılır?##
+**Nasıl Kullanılır?**
 >`npm install` ile package.json Dosyasını Kurun.
 >**video** Klasörünün İçinde ki Videoyu Silin ve İndirdiğiniz Filmi/Diziyi Koyun.
 >Eğer Kendiniz Site Kuruyorsanız `app.js` ve libarys İçinde ki `watch.js` Dosyalarını İndirin
