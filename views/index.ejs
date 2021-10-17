@@ -7,13 +7,14 @@
 	<title>Arkadaşların İle Film İzle!</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="index.css">
+	<link rel="Shot" href="">
 	<script src="/socket.io/socket.io.js"></script>
 	<link rel="shortcut icon" type="image/ico" href="img/favicon.ico"/>
-	
+
 </head>
 <body>
 
-	<h1 id="ortayazi"><center>Videoyu Başlatmadan Önce Kontrol Fonksiyonunu Kullanınız!</center></h1>
+	<h1 id="ortayazi"><center>Videoyu Başlatmadan Önce Senkronize Ediniz!</center></h1>
 	
 	<!-- Video Divini Oluşturduk -->
 	<div id="videocanvas">
@@ -24,7 +25,7 @@
 
 		<div id="buttons">
 			<center>
-			<button onclick="kontrol()" type="button" id="kontrol">Kontrol</button>
+			<button onclick="kontrol()" type="button" id="kontrol">Senkronize Et</button>
 			<button onclick="baslat()" type="button" id="baslat" style="display:none;">Başlat</button>
 			<button onclick="durdur()" type="button" id="durdur" style="display:none;">Durdur</button>
 			<button onclick="gal()" type="button" id="gal" style="display:none;"><< 5 Saniye Geri Al</button>
@@ -35,11 +36,12 @@
 
 		</div>
 
+		<p id="id"></p>
+
 	</div>
 
 	<!-- Script Dosyasını Ekledik -->
 	<script type="text/javascript" src="watch.js"></script>
-	
 
 </body>
 </html>
