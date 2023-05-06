@@ -156,6 +156,31 @@ body{
 	border-radius: 5px;
 }
 
+#alarm{
+	color: #18dcff;
+	background-color: #34495e;
+	text-shadow: 0px 0px 14px rgba(24, 220, 255, 1);
+	border:0px;
+	font-family: sans-serif;
+	width: 100px;
+	height: 30px;
+	font-size: 15px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+#oal{
+	color: #18dcff;
+	background-color: #34495e;
+	text-shadow: 0px 0px 14px rgba(24, 220, 255, 1);
+	border:0px;
+	font-family: sans-serif;
+	width: 100px;
+	height: 30px;
+	font-size: 15px;
+	cursor: pointer;
+	border-radius: 5px;
+}
 
 #buttons{
 	align-items: center;
