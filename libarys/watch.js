@@ -8,9 +8,11 @@ const socket = io.connect();
 const baslat_t = document.getElementById('baslat');
 const durdur_t = document.getElementById('durdur');
 const ial_t = document.getElementById('ial');
+const oal_t = document.getElementById('oal');
 const gal_t = document.getElementById('gal');
 const bal_t = document.getElementById('bal');
-const te_t = document.getElementById('te'); 
+const te_t = document.getElementById('te');
+const alarm_t = document.getElementById('alarm');
 
 // Buton Fonksiyonları ve Socket İşlemleri
 
@@ -26,6 +28,8 @@ function kontrol(){
 	gal_t.style.display = "inline-block";
 	bal_t.style.display = "inline-block";
 	te_t.style.display = "inline-block";
+	oal_t.style.display = "inline-block";
+	alarm_t.style.display = "inline-block";
 
 }
 
@@ -44,22 +48,29 @@ function baslat(){
 // Durdurma Fonskyionu
 
 function durdur(){
-	video.pause();
 	socket.emit('durdurdu');
+	video.pause();
+}
+
+// Olduğun Zamana Alma
+
+function oal(){
+	let zaman = video.currentTime;
+	socket.emit('oal', zaman)
 }
 
 // Geriye Alma Fonskyionu
 
 function gal(){
-	video.currentTime = video.currentTime - 5;
 	socket.emit('gal');
+	video.currentTime = video.currentTime - 5;
 }
 
 // İleriye Alma Fonskyionu
 
 function ial(){
-	video.currentTime = video.currentTime + 5;
 	socket.emit('ial');
+	video.currentTime = video.currentTime + 5;
 }
 
 // Başa Alma Fonskyionu
@@ -68,6 +79,12 @@ function bal(){
 	video.currentTime = 0;
 	video.pause();
 	socket.emit('bal');
+}
+
+// Alarm Fonskyionu
+
+function alarm(){
+	socket.emit('alarm');
 }
 
 // Socket İşlemleri
@@ -100,6 +117,18 @@ socket.on('ial', () => {
 socket.on('bal', () => {
 	video.currentTime = 0;
 	video.pause();
+});
+
+// Başa Alma Socketi
+
+socket.on('oal', (data) => {
+	video.currentTime = data;
+});
+
+// Alarm Socketi
+
+socket.on('alarm', () => {
+	alert('Alarm! Birisi Tarafından Alarm Gönderildi! Bir Sorun Olabilir, Arkadaşların ile İletişimini Kontrol Et!')
 });
 
 // Socket ID Bilgisini Alıyoruz
