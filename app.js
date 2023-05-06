@@ -58,6 +58,14 @@ io.on('connection', (socket) => {
 	socket.on('bal', () => {
 		socket.broadcast.emit('bal')
 	});
+	
+	socket.on('oal', (data) => {
+		socket.broadcast.emit('oal', data)
+	});
+
+	socket.on('alarm', () => {
+		socket.broadcast.emit('alarm')
+	});
 
 });
 
